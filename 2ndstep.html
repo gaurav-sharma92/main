@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Box Movement</title>
+  <style>
+    #outer {
+      width: 500px;
+      height: 500px;
+      background: blue;
+      position: relative;
+    }
+
+    #inner {
+      width: 100px;
+      height: 100px;
+      background: red;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Box Move Example</h2>
+
+  <div id="outer">
+    <div id="inner"></div>
+  </div>
+
+  <br>
+
+  <button onclick="moveTop()">Top</button>
+  <button onclick="moveBottom()">Bottom</button>
+  <button onclick="moveLeft()">Left</button>
+  <button onclick="moveRight()">Right</button>
+
+  <script>
+    function moveTop() {
+      document.getElementById("inner").style.top = "0px";
+    }
+
+    function moveBottom() {
+      document.getElementById("inner").style.top = "400px";
+    }
+
+    function moveLeft() {
+      document.getElementById("inner").style.left = "0px";
+    }
+
+    function moveRight() {
+      document.getElementById("inner").style.left = "400px";
+    }
+  </script>
+
+</body>
+</html>

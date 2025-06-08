@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js task</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+   <div class="parent" id="parent">
+    <div class="childbox" id="childBox"></div>
+   </div>
+
+   <div class="btnCont">
+    <button class="btn" id="left"> left</button>
+    <button class="btn" id="right">rigt</button>
+    <button class="btn" id="bottom">bottom</button>
+    <button class="btn" id="top">top</button>
+    <button class="btn" id="center">center</button>
+   </div>
+
+    <script>
+        let childBox = document.getElementById("childBox");
+        let leftbtn = document.getElementById("left");
+        let rightbtn = document.getElementById("right");
+        let bottombtn = document.getElementById("bottom");
+        let topbtn = document.getElementById("top");
+        let centerbtn = document.getElementById("center");
+
+      leftbtn.addEventListener("click", ()=>{
+        childBox.classList.add("left-0");
+        childBox.classList.remove("right-0")
+        childBox.classList.remove("bottom-0")
+        childBox.classList.remove("top-0")
+        childBox.classList.remove("center");
+      });
+      rightbtn.addEventListener("click", ()=>{
+        childBox.classList.add("right-0");
+        childBox.classList.remove("left-0")
+        childBox.classList.remove("bottom-0")
+        childBox.classList.remove("top-0")
+        childBox.classList.remove("center");
+      });
+        bottombtn.addEventListener("click", ()=>{
+        childBox.classList.add("bottom-0");
+        childBox.classList.remove("left-0")
+        childBox.classList.remove("right-0")
+        childBox.classList.remove("top-0")
+        childBox.classList.remove("center");
+      });
+        topbtn.addEventListener("click", ()=>{
+        childBox.classList.add("top-0");
+        childBox.classList.remove("left-0")
+        childBox.classList.remove("bottom-0")
+        childBox.classList.remove("right-0")
+        childBox.classList.remove("center");
+      });
+        centerbtn.addEventListener("click", ()=>{
+            childBox.classList.add("center");
+            childBox.classList.remove("left-0")
+            childBox.classList.remove("bottom-0")
+            childBox.classList.remove("right-0")
+            childBox.classList.remove("top-0")
+        });
+        
+
+    </script>
+</body>
+</html>

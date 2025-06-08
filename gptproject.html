@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Box Move Project</title>
+  <style>
+    .outer-box {
+      width: 500px;
+      height: 500px;
+      background-color: blue;
+      position: relative;
+      margin: 20px auto;
+    }
+
+    .inner-box {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: all 0.3s ease;
+    }
+
+    .button-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    button {
+      margin: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="outer-box" id="outerBox">
+    <div class="inner-box" id="innerBox"></div>
+  </div>
+
+  <div class="button-container">
+    <button onclick="moveBox('top')">Top</button>
+    <button onclick="moveBox('bottom')">Bottom</button>
+    <button onclick="moveBox('left')">Left</button>
+    <button onclick="moveBox('right')">Right</button>
+  </div>
+
+  <script>
+    function moveBox(direction) {
+      const innerBox = document.getElementById("innerBox");
+      const outerBox = document.getElementById("outerBox");
+
+      const outerW = outerBox.clientWidth;
+      const outerH = outerBox.clientHeight;
+      const innerW = innerBox.clientWidth;
+      const innerH = innerBox.clientHeight;
+
+      if (direction === "top") {
+        innerBox.style.top = "0px";
+      } else if (direction === "bottom") {
+        innerBox.style.top = (outerH - innerH) + "px";
+      } else if (direction === "left") {
+        innerBox.style.left = "0px";
+      } else if (direction === "right") {
+        innerBox.style.left = (outerW - innerW) + "px";
+      }
+    }
+  </script>
+
+</body>
+</html>
